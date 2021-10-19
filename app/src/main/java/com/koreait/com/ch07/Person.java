@@ -1,0 +1,22 @@
+package com.koreait.com.ch07;
+
+public class Person {
+    private String name;
+    public int age;
+
+    public Person(String name,int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setName(String 원더우먼) {
+    }
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/menuBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4169E1"
+            android:onClick="moveToActivity"
+            android:text="메인"/>
+
+        <Button
+            android:id="@+id/menuBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="moveToActivity"
+            android:backgroundTint="#6495ED"
+            android:text="리니어레이아웃"/>
+
+        <Button
+            android:id="@+id/menuBtn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="moveToActivity"
+            android:backgroundTint="#6495ED"
+            android:text="제약레이아웃"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="call"
+            android:backgroundTint="#9BC3FF"
+            android:text="전화"/>
+
+
+
+
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/menuBtn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#5050FF"
+            android:onClick="moveToActivity"
+            android:text="글쓰기"/>
+
+        <Button
+            android:id="@+id/menuBtn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="moveToActivity"
+            android:backgroundTint="#6464CD"
+            android:text="Person"/>
+
+        <Button
+            android:id="@+id/menuBtn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="moveToActivity"
+            android:text="이미지"/>
+
+    </TableRow>
+
+
+</TableLayout>
