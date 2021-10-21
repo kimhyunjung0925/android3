@@ -9,8 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.koreait.com.ch07.BookPersonActivity;
 import com.koreait.com.ch10.DailyBoxofficeActivity;
+
+import com.koreait.com.ch10.WeekBoxofficeActivity;
 import com.koreait.com.picsum.PicsumActivity;
 
 public class MenuActivity extends AppCompatActivity {
@@ -19,11 +22,18 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        int result = Utils.parseStringToInt("11a");
+        Log.i("myLog",""+ result);
+
+        result = Utils.parseStringToInt("11",5); // 11 리턴
+        result = Utils.parseStringToInt("1a1",5); // 5 리턴, val값에 a있어서 defval리턴
+
     }
 
     public void call(View v) {
         Intent intent = new Intent(Intent.ACTION_VIEW
-                , Uri.parse("tel:010-9270-4107"));
+                , Uri.parse("tel:010-7118-4107"));
         startActivity(intent);
     }
 
@@ -47,8 +57,14 @@ public class MenuActivity extends AppCompatActivity {
             c = PicsumActivity.class;
         } else if(id == R.id.menuBtn8) {
             c = DailyBoxofficeActivity.class;
+        } else if(id == R.id.menuBtn9) {
+           c = WeekBoxofficeActivity.class;
         }
 
+            if(c == null) {
+                Snackbar.make(v,"준비중입니다.", Snackbar.LENGTH_SHORT).show();
+                return;
+            }
             Intent intent = new Intent(this, c);
             startActivity(intent);
         }

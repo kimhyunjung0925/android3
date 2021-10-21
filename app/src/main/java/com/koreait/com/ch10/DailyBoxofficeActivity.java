@@ -1,13 +1,23 @@
 package com.koreait.com.ch10;
+import static com.koreait.com.Utils.getNumberComma;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.icu.number.Scale;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.koreait.com.R;
+import com.koreait.com.Utils;
+import com.koreait.com.picsum.PicsumVO;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -21,13 +31,21 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DailyBoxofficeActivity extends AppCompatActivity {
 
+    private DailyBoxofficeAdapter adapter;
+
     private DatePicker dpTargetDt;
+    private RecyclerView rvList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_boxoffice);
+
+        adapter = new DailyBoxofficeAdapter();
+
         dpTargetDt = findViewById(R.id.dpTargetDt);
+        rvList = findViewById(R.id.rvList);
+        rvList.setAdapter(adapter);
 
     }
 
@@ -46,15 +64,13 @@ public class DailyBoxofficeActivity extends AppCompatActivity {
             public void onResponse(Call<BoxOfficeResultBodyVO> call, Response<BoxOfficeResultBodyVO> res) {
                 if(res.isSuccessful()) {
                     BoxOfficeResultBodyVO vo = res.body();
+
                     BoxOfficeResultVO resultVo = vo.getBoxOfficeResult();
                     List<DailyBoxOfficeVO> list = resultVo.getDailyBoxOfficeList();
+                    // List<DailyBoxOfficeVO> list = vo.getBoxOfficeResult().getDailyBoxOfficeList(); 위 두줄을 한줄로
 
-                    Log.i("myLog", list.size() + "개");
-
-
-                    for(DailyBoxOfficeVO item : list) {
-                        Log.i("myLog", item.getMovieNm());
-                    }
+                    adapter.setList(list);
+                    adapter.notifyDataSetChanged();
                 }
             }
 
@@ -74,5 +90,51 @@ public class DailyBoxofficeActivity extends AppCompatActivity {
         network(date);
 
         Log.i("myLog", date);
+    }
+}
+
+class DailyBoxofficeAdapter extends RecyclerView.Adapter<DailyBoxofficeAdapter.MyViewHolder> {
+
+    private List<DailyBoxOfficeVO> list;
+
+    public void setList(List<DailyBoxOfficeVO> list) {
+        this.list = list;
+    }
+
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View v = inflater.inflate(R.layout.item_daily_boxoffice, parent, false);
+        return new MyViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        DailyBoxOfficeVO vo = list.get(position);
+        holder.setItem(vo);
+        // holder.setItem(list.get(position)); 위 두줄을 한줄로 바꾼 것
+    }
+
+    @Override
+    public int getItemCount() {
+        return list == null ? 0 : list.size();
+    }
+
+    static class MyViewHolder extends RecyclerView.ViewHolder {
+        private TextView tvTitle;
+        private TextView tvAudienceCnt;
+
+        public MyViewHolder(View v) {
+            super(v);
+            tvTitle = v.findViewById(R.id.tvTitle);
+            tvAudienceCnt = v.findViewById(R.id.tvAudienceCnt);
+        }
+
+        public void setItem(DailyBoxOfficeVO vo) {
+            tvTitle.setText(vo.getMovieNm());
+            String numberComma = Utils.getNumberComma(vo.getTvAudienceCnt());
+            tvAudienceCnt.setText(numberComma + "명");
+        }
     }
 }

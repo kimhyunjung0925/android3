@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".ch10.WeekBoxofficeActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ch10.DailyBoxofficeActivity"
             android:exported="false" />
         <activity

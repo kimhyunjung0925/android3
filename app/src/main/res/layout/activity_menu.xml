@@ -75,7 +75,7 @@
             android:id="@+id/menuBtn7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#B750EA"
+            android:backgroundTint="#8F7CEE"
             android:onClick="moveToActivity"
             android:text="picsum"/>
 
@@ -89,6 +89,23 @@
         android:backgroundTint="#8B5927"
         android:onClick="moveToActivity"
         android:text="박스오피스"/>
+
+        <Button
+            android:id="@+id/menuBtn9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#906D3B"
+            android:onClick="moveToActivity"
+            android:text="주간영화순위"/>
+
+        <Button
+            android:id="@+id/menuBtn10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#A4814F"
+            android:onClick="moveToActivity"
+            android:text="연간영화순위"/>
+
     </TableRow>
 
 
