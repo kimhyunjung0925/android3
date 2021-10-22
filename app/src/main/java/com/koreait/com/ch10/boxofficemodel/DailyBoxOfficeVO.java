@@ -1,4 +1,4 @@
-package com.koreait.com.ch10;
+package com.koreait.com.ch10.boxofficemodel;
 
 public class DailyBoxOfficeVO {
     private String rank; //영화순위

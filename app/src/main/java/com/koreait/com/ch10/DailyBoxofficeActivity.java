@@ -1,27 +1,19 @@
 package com.koreait.com.ch10;
 import static com.koreait.com.Utils.getNumberComma;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.icu.number.Scale;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.DatePicker;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.koreait.com.R;
-import com.koreait.com.Utils;
-import com.koreait.com.picsum.PicsumVO;
+import com.koreait.com.ch10.boxofficemodel.BoxOfficeResultBodyVO;
+import com.koreait.com.ch10.boxofficemodel.BoxOfficeResultVO;
+import com.koreait.com.ch10.boxofficemodel.DailyBoxOfficeVO;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DailyBoxofficeActivity extends AppCompatActivity {
 
-    private BoxOfficeAdapter adapter;
+    private KobisBoxofficeAdapter adapter;
 
     private DatePicker dpTargetDt;
     private RecyclerView rvList;
@@ -41,7 +33,7 @@ public class DailyBoxofficeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_boxoffice);
 
-        adapter = new BoxOfficeAdapter();
+        adapter = new KobisBoxofficeAdapter();
 
         dpTargetDt = findViewById(R.id.dpTargetDt);
         rvList = findViewById(R.id.rvList);

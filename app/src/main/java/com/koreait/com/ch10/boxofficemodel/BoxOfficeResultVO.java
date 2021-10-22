@@ -1,4 +1,4 @@
-package com.koreait.com.ch10;
+package com.koreait.com.ch10.boxofficemodel;
 
 import java.util.List;
 

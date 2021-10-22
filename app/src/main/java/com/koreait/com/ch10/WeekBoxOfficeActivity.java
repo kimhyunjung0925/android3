@@ -16,6 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.koreait.com.R;
+import com.koreait.com.ch10.boxofficemodel.BoxOfficeResultBodyVO;
+import com.koreait.com.ch10.boxofficemodel.BoxOfficeResultVO;
+import com.koreait.com.ch10.boxofficemodel.DailyBoxOfficeVO;
 
 
 import java.util.List;

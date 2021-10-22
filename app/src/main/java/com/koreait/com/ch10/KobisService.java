@@ -1,5 +1,8 @@
 package com.koreait.com.ch10;
 
+import com.koreait.com.ch10.boxofficemodel.BoxOfficeResultBodyVO;
+import com.koreait.com.ch10.searchmoviemodel.MovieListResultBodyVO;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -14,5 +17,10 @@ public interface KobisService {
     @GET("boxoffice/searchWeeklyBoxOfficeList.json")
     Call<BoxOfficeResultBodyVO> boxOfficeSearchWeeKBoxOfficeList
     (@Query("key") String key, @Query("targetDt") String targetDt, @Query("weekGb") String weekGb);
+
+    //영화목록
+    @GET("movie/searchMovieList.json")
+    Call<MovieListResultBodyVO> searchMovieList
+    (@Query("key") String key);
 
 }
