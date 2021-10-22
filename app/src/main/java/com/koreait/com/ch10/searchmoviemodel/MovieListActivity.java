@@ -38,7 +38,7 @@ class MovieListAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.item_movie, parent, false);
-        return new KobisBoxofficeAdapter.MyViewHolder(v);
+        return new MovieListAdapter.MyViewHolder(v);
     }
 
     @Override
