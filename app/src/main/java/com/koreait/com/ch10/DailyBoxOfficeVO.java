@@ -5,7 +5,7 @@ public class DailyBoxOfficeVO {
     private String movieNm; //영화이름
     private String openDt; //개봉일
     private String audiCnt;
-    private String showRange;
+    private String showRange; //기간표시
 
     public String getRank() {
         return rank;

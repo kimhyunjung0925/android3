@@ -31,7 +31,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DailyBoxofficeActivity extends AppCompatActivity {
 
-    private DailyBoxofficeAdapter adapter;
+    private BoxOfficeAdapter adapter;
 
     private DatePicker dpTargetDt;
     private RecyclerView rvList;
@@ -41,7 +41,7 @@ public class DailyBoxofficeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_boxoffice);
 
-        adapter = new DailyBoxofficeAdapter();
+        adapter = new BoxOfficeAdapter();
 
         dpTargetDt = findViewById(R.id.dpTargetDt);
         rvList = findViewById(R.id.rvList);
@@ -93,48 +93,3 @@ public class DailyBoxofficeActivity extends AppCompatActivity {
     }
 }
 
-class DailyBoxofficeAdapter extends RecyclerView.Adapter<DailyBoxofficeAdapter.MyViewHolder> {
-
-    private List<DailyBoxOfficeVO> list;
-
-    public void setList(List<DailyBoxOfficeVO> list) {
-        this.list = list;
-    }
-
-    @NonNull
-    @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View v = inflater.inflate(R.layout.item_daily_boxoffice, parent, false);
-        return new MyViewHolder(v);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        DailyBoxOfficeVO vo = list.get(position);
-        holder.setItem(vo);
-        // holder.setItem(list.get(position)); 위 두줄을 한줄로 바꾼 것
-    }
-
-    @Override
-    public int getItemCount() {
-        return list == null ? 0 : list.size();
-    }
-
-    static class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvTitle;
-        private TextView tvAudienceCnt;
-
-        public MyViewHolder(View v) {
-            super(v);
-            tvTitle = v.findViewById(R.id.tvTitle);
-            tvAudienceCnt = v.findViewById(R.id.tvAudienceCnt);
-        }
-
-        public void setItem(DailyBoxOfficeVO vo) {
-            tvTitle.setText(vo.getMovieNm());
-            String numberComma = Utils.getNumberComma(vo.getTvAudienceCnt());
-            tvAudienceCnt.setText(numberComma + "명");
-        }
-    }
-}

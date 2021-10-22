@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ch10.WeekBoxofficeActivity">
+    tools:context=".ch10.WeekBoxOfficeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,22 +21,26 @@
             android:datePickerMode="spinner"
             android:calendarViewShown="false"
             android:layout_weight="1"/>
+        <Spinner
+            android:id="@+id/wkSpinner"
+            android:layout_width="100dp"
+            android:layout_height="70dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="clkSearch"
+            android:onClick="clkSearchWeek"
             android:text="검색"/>
+
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/showRange"
+        android:id="@+id/range"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="239dp" />
+        android:layout_height="wrap_content"/>
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvList"

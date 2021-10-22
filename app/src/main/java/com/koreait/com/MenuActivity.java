@@ -13,7 +13,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.koreait.com.ch07.BookPersonActivity;
 import com.koreait.com.ch10.DailyBoxofficeActivity;
 
-import com.koreait.com.ch10.WeekBoxofficeActivity;
+import com.koreait.com.ch10.WeekBoxOfficeActivity;
 import com.koreait.com.picsum.PicsumActivity;
 
 public class MenuActivity extends AppCompatActivity {
@@ -58,7 +58,7 @@ public class MenuActivity extends AppCompatActivity {
         } else if(id == R.id.menuBtn8) {
             c = DailyBoxofficeActivity.class;
         } else if(id == R.id.menuBtn9) {
-           c = WeekBoxofficeActivity.class;
+           c = WeekBoxOfficeActivity.class;
         }
 
             if(c == null) {
