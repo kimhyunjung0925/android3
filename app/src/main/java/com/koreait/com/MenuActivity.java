@@ -14,6 +14,7 @@ import com.koreait.com.ch07.BookPersonActivity;
 import com.koreait.com.ch10.DailyBoxofficeActivity;
 
 import com.koreait.com.ch10.WeekBoxOfficeActivity;
+import com.koreait.com.ch10.searchmoviemodel.MovieListActivity;
 import com.koreait.com.picsum.PicsumActivity;
 
 public class MenuActivity extends AppCompatActivity {
@@ -59,6 +60,8 @@ public class MenuActivity extends AppCompatActivity {
             c = DailyBoxofficeActivity.class;
         } else if(id == R.id.menuBtn9) {
            c = WeekBoxOfficeActivity.class;
+        } else if(id == R.id.menuBtn10) {
+            c = MovieListActivity.class;
         }
 
             if(c == null) {

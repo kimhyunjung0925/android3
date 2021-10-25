@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".ch10.MovieDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ch10.searchmoviemodel.MovieListActivity"
             android:exported="false" />
         <activity

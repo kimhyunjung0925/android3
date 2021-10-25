@@ -79,7 +79,6 @@ public class WeekBoxOfficeActivity extends AppCompatActivity {
 
                     BoxOfficeResultVO resultVo = vo.getBoxOfficeResult();
                     List<DailyBoxOfficeVO> list = resultVo.getWeeklyBoxOfficeList();
-                    //List<DailyBoxOfficeVO> list2 = vo.getBoxOfficeResult().getWeeklyBoxOfficeList();
 
                     adapter.setList(list);
                     adapter.notifyDataSetChanged();

@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="moveToActivity"
-            android:backgroundTint="#6495ED"
+            android:backgroundTint="#7DA5E1"
             android:text="제약레이아웃"/>
 
         <Button
@@ -68,14 +68,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="moveToActivity"
-            android:backgroundTint="#52478B"
+            android:backgroundTint="#8572EE"
             android:text="이미지"/>
 
         <Button
             android:id="@+id/menuBtn7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#8F7CEE"
+            android:backgroundTint="#AD9AEE"
             android:onClick="moveToActivity"
             android:text="picsum"/>
 
@@ -97,6 +97,14 @@
             android:backgroundTint="#906D3B"
             android:onClick="moveToActivity"
             android:text="주간영화순위"/>
+
+        <Button
+            android:id="@+id/menuBtn10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#A98B59"
+            android:onClick="moveToActivity"
+            android:text="영화목록"/>
 
 
     </TableRow>
