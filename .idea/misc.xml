@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/android/app/src/main/res/layout/activity_movie_detail.xml" value="0.33" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/android/app/src/main/res/layout/activity_week_box_office.xml" value="0.15" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/android/app/src/main/res/layout/item_actor.xml" value="0.22" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/android/app/src/main/res/layout/item_daily_boxoffice.xml" value="0.15" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/android/app/src/main/res/layout/item_movie.xml" value="0.1787037037037037" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/android/app/src/main/res/layout/item_picsum.xml" value="0.1787037037037037" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/android/app/src/main/res/layout/item_textview.xml" value="0.1787037037037037" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/android/app/src/main/res/layout/person_item.xml" value="0.1787037037037037" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/android3/app/src/main/res/layout/activity_daily_boxoffice.xml" value="0.17314814814814813" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/android3/app/src/main/res/layout/activity_menu.xml" value="0.30185185185185187" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/android3/app/src/main/res/layout/activity_movie_list.xml" value="0.1" />
